@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enigma Labs - Experiência 3D</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      overflow: hidden;
+      background-color: #0a0a14;
+      font-family: Arial, sans-serif;
+    }
+    
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    
+    .loading-placeholder {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #0a0a14;
+      color: white;
+      z-index: 999;
+    }
+    
+    .loading-placeholder h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .loading-placeholder h1 span:first-child {
+      color: #8b00ff;
+    }
+    
+    .loading-placeholder p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-placeholder">
+    <h1><span>ENIGMA</span> LABS</h1>
+    <p>Carregando experiência...</p>
+  </div>
+  
+  <canvas id="c"></canvas>
+  
+  <script type="module" src="src/main.js"></script>
+  
+  <script>
+    // Registrar service worker para PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registrado com sucesso:', registration);
+          })
+          .catch(error => {
+            console.log('Falha ao registrar Service Worker:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

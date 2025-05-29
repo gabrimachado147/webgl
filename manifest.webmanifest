@@ -1,0 +1,21 @@
+{
+  "name": "Enigma Labs WebGL Experience",
+  "short_name": "EnigmaWebGL",
+  "description": "Experiência 3D imersiva da Enigma Labs",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#0a0a14",
+  "theme_color": "#8b00ff",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
