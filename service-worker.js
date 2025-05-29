@@ -88,9 +88,7 @@ self.addEventListener('sync', (event) => {
 self.addEventListener('push', (event) => {
   const title = 'Enigma Labs';
   const options = {
-    body: event.data.text(),
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/badge-72x72.png'
+    body: event.data.text()
   };
 
   event.waitUntil(

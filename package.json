@@ -1,0 +1,11 @@
+{
+  "name": "enigma-webgl",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "three": "^0.160.0",
+    "gsap": "^3.12.5",
+    "@dimforge/rapier3d-compat": "^0.12.0"
+  }
+}
+

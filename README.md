@@ -12,9 +12,20 @@ A next‑gen immersive WebGPU/WebGL site scaffold featuring:
 
 ## Quick Start
 
-1. Install a local dev server (e.g. `npm i -g serve`)  
-2. Run `serve .` in this folder.  
-3. Open [http://localhost:3000](http://localhost:3000) in a modern browser with WebGPU (Chrome Canary or Edge).
+1. Run `npm install` to fetch dependencies.
+2. Install a static server if you don't have one (`npm i -g serve`).
+3. Run `serve .` and open [http://localhost:3000](http://localhost:3000).
+4. The site uses an import map in `index.html` so modules load without a bundler.
+
+## Usage
+
+The entry point is `src/main.js`, which instantiates `EnigmaWebGL`. This class
+creates a `Renderer`, builds the `Scene`, loads assets via `AssetManager`,
+initializes physics with `PhysicsSystem` and shows a basic interface from
+`UserInterface`.
+
+When you are done with the experience call `EnigmaWebGL.dispose()` to stop the
+render loop, remove event listeners and release GPU resources.
 
 ## TODO
 

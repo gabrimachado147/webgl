@@ -7,6 +7,7 @@ export class Renderer {
     this.canvas = canvas;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+    this.handleResize = null;
     this.initRenderer();
     this.setupResizeListener();
   }
@@ -46,16 +47,18 @@ export class Renderer {
   }
 
   setupResizeListener() {
-    window.addEventListener('resize', () => {
+    this.handleResize = () => {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
       this.renderer.setSize(this.width, this.height);
-      
+
       // Emitir evento para que a câmera e o composer possam ser atualizados
-      window.dispatchEvent(new CustomEvent('renderer-resize', { 
-        detail: { width: this.width, height: this.height } 
+      window.dispatchEvent(new CustomEvent('renderer-resize', {
+        detail: { width: this.width, height: this.height }
       }));
-    });
+    };
+
+    window.addEventListener('resize', this.handleResize);
   }
 
   // Métodos para acesso ao renderer
@@ -79,7 +82,10 @@ export class Renderer {
 
   dispose() {
     this.renderer.dispose();
-    window.removeEventListener('resize', this.handleResize);
+    if (this.handleResize) {
+      window.removeEventListener('resize', this.handleResize);
+      this.handleResize = null;
+    }
   }
 }
 

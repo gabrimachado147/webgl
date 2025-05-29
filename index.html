@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enigma Labs - Experiência 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
   <style>
     * {
@@ -11,11 +14,14 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       background-color: #0a0a14;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+      scroll-behavior: smooth;
     }
     
     canvas {
@@ -55,15 +61,139 @@
       font-size: 1rem;
       color: rgba(255, 255, 255, 0.7);
     }
+
+    #overlay {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(10, 10, 20, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 50;
+      font-size: 1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #8b00ff;
+    }
+
+    nav .logo {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #8b00ff, #0a0a14 70%);
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #8b00ff, #ff00e6);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .produtos {
+      background: linear-gradient(135deg, #1f0028, #0a0a14);
+    }
+
+    .portfolio {
+      background: linear-gradient(135deg, #0a0a14, #1f0028);
+    }
+
+    .contato {
+      background: #0a0a14;
+    }
   </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/examples/jsm/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="loading-placeholder">
     <h1><span>ENIGMA</span> LABS</h1>
     <p>Carregando experiência...</p>
   </div>
-  
+
+  <nav>
+    <div class="logo">Enigma Labs</div>
+    <div>
+      <a href="#produtos">Produtos</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
   <canvas id="c"></canvas>
+
+  <div id="overlay">
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Enigma Labs</h1>
+        <p>Inteligência que transforma</p>
+        <a href="#contato" class="cta">Fale Conosco</a>
+      </div>
+    </section>
+    <section class="produtos" id="produtos">Nossos Produtos</section>
+    <section class="portfolio" id="portfolio">Portfólio</section>
+    <section class="contato" id="contato">Fale conosco</section>
+  </div>
   
   <script type="module" src="src/main.js"></script>
   

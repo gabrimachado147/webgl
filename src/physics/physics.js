@@ -14,8 +14,8 @@ export class PhysicsSystem {
     if (this.initialized) return this.RAPIER;
 
     try {
-      // Importar Rapier dinamicamente
-      const RAPIER = await import('https://cdn.skypack.dev/@dimforge/rapier3d-compat');
+      // Importar Rapier dinamicamente (via dependência local)
+      const RAPIER = await import('@dimforge/rapier3d-compat');
       await RAPIER.init();
       
       this.RAPIER = RAPIER;
