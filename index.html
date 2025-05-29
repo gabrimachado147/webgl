@@ -11,11 +11,13 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       background-color: #0a0a14;
       font-family: Arial, sans-serif;
+      color: #ffffff;
     }
     
     canvas {
@@ -55,6 +57,39 @@
       font-size: 1rem;
       color: rgba(255, 255, 255, 0.7);
     }
+
+    #overlay {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #8b00ff, #0a0a14 70%);
+      font-weight: bold;
+    }
+
+    .produtos {
+      background: linear-gradient(135deg, #1f0028, #0a0a14);
+    }
+
+    .portfolio {
+      background: linear-gradient(135deg, #0a0a14, #1f0028);
+    }
+
+    .contato {
+      background: #0a0a14;
+    }
   </style>
 </head>
 <body>
@@ -64,6 +99,13 @@
   </div>
   
   <canvas id="c"></canvas>
+
+  <div id="overlay">
+    <section class="hero">Enigma Labs — Inteligência que transforma.</section>
+    <section class="produtos">Nossos Produtos</section>
+    <section class="portfolio">Portfólio</section>
+    <section class="contato">Fale conosco</section>
+  </div>
   
   <script type="module" src="src/main.js"></script>
   
