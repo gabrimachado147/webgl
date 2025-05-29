@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enigma Labs - Experiência 3D</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma Labs - Experiência 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
+    <style>
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +19,6 @@
       overflow-x: hidden;
       overflow-y: auto;
       background-color: #0a0a14;
-      font-family: Arial, sans-serif;
-      color: #ffffff;
     }
     
     canvas {
@@ -63,20 +64,20 @@
       z-index: 10;
       width: 100%;
     }
-
+      
     section {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      font-size: 3rem;
       text-align: center;
     }
 
     .hero {
       background: radial-gradient(circle at top left, #8b00ff, #0a0a14 70%);
       font-weight: bold;
+      
     }
 
     .produtos {
@@ -101,10 +102,7 @@
   <canvas id="c"></canvas>
 
   <div id="overlay">
-    <section class="hero">Enigma Labs — Inteligência que transforma.</section>
-    <section class="produtos">Nossos Produtos</section>
-    <section class="portfolio">Portfólio</section>
-    <section class="contato">Fale conosco</section>
+    
   </div>
   
   <script type="module" src="src/main.js"></script>
