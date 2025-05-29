@@ -14,7 +14,7 @@ A next‑gen immersive WebGPU/WebGL site scaffold featuring:
 
 1. Install a local dev server (e.g. `npm i -g serve`)  
 2. Run `serve .` in this folder.  
-3. Open [http://localhost:3000](http://localhost:3000) in a modern browser with WebGPU (Chrome Canary or Edge).
+3. Open [http://localhost:5173](http://localhost:5173) in a modern browser with WebGPU (Chrome Canary or Edge).
 
 ## TODO
 
