@@ -19,9 +19,6 @@
       overflow-x: hidden;
       overflow-y: auto;
       background-color: #0a0a14;
-      font-family: 'Inter', sans-serif;
-      color: #ffffff;
-      scroll-behavior: smooth;
     }
     
     canvas {
@@ -67,79 +64,20 @@
       z-index: 10;
       width: 100%;
     }
-
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(10, 10, 20, 0.6);
-      backdrop-filter: blur(6px);
-      font-size: 1rem;
-    }
-
-    .nav .logo {
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .nav .links a {
-      margin-left: 1.5rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 400;
-    }
-
-    .nav .links a:hover {
-      text-decoration: underline;
-    }
-
+      
     section {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      font-size: 2rem;
       text-align: center;
     }
 
     .hero {
       background: radial-gradient(circle at top left, #8b00ff, #0a0a14 70%);
       font-weight: bold;
-      padding-top: 6rem; /* compensar barra de navegaçao */
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero-content h2 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(135deg, #8b00ff, #ff00e6);
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1rem;
+      
     }
 
     .produtos {
@@ -164,26 +102,7 @@
   <canvas id="c"></canvas>
 
   <div id="overlay">
-    <header class="nav">
-      <div class="logo">Enigma Labs</div>
-      <nav class="links">
-        <a href="#produtos">Produtos</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
-
-      <section class="hero">
-      <div class="hero-content">
-        <h2>Inteligência que transforma</h2>
-        <p>Soluções em 3D imersivo para sua empresa</p>
-        <a class="cta" href="#contato">Saiba mais</a>
-      </div>
-    </section>
-
-    <section id="produtos" class="produtos">Nossos Produtos</section>
-    <section id="portfolio" class="portfolio">Portfólio</section>
-    <section id="contato" class="contato">Fale conosco</section>
+    
   </div>
   
   <script type="module" src="src/main.js"></script>
